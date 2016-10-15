@@ -1,0 +1,54 @@
+html, body {
+    height: 100%;
+}
+
+.body-principal {
+    background-color: black;
+    height: 100%;
+}
+
+.tic-tac {
+    background-color: lightgray;
+    height: 100%;
+}
+
+.casa {
+    height: 110px;
+    width: 110px;
+    margin: 10px auto;
+    background-color: grey;
+}
+
+.casa div {
+    height: 110px;
+    width: 110px;
+    border-radius: 55px;
+}
+
+.debug {
+    background-color: black;
+    min-height: 30px;
+    min-width: 30px;
+}
+
+.botao {
+    margin: auto;
+    margin-top: 20px;
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.peca-x {
+    /*background-color: black;*/
+    font-size: 75px;
+}
+
+.peca-o {
+    /*background-color: white;*/
+    font-size: 75px;
+}
+
+.peca-limpa {
+    background-color: grey;
+}
