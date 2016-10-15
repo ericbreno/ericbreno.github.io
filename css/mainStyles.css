@@ -31,8 +31,9 @@ body {
 
 .tabuleiro {
     height: 100%;
-    width: 92%;
+    width: 33%;
     min-width: 300px;
+    background-color: black;
     padding: 0% 3%;
     margin: 0 auto;
     float: none;
