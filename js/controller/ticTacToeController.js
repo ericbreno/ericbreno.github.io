@@ -67,7 +67,7 @@
             } else {
                 $scope.modoJogo = SINGLE_PLAYER;
             }
-            self.vezX = true;
+            TicTacToeService.vezX = true;
             self.resetar();
             self.vsBot = !self.vsBot;
         };
