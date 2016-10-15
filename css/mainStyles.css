@@ -41,6 +41,8 @@ body {
 .linha {
     height: 31%;
     width: 100%;
+    min-width: 300px;
+    background-color: black;
     margin-top: 3%;
 }
 
