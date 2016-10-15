@@ -30,7 +30,7 @@ body {
     background-color: blue;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 650px) {
     .tabuleiro {
         height: 100%;
         width: 90%;
@@ -38,11 +38,11 @@ body {
         padding: 0;
         margin: 0 auto;
         float: none;
-        background-color: red;
+        background-color: mediumpurple;
     }
 }
 
-@media only screen and (min-width: 451px) {
+@media only screen and (min-width: 651px) {
     .tabuleiro {
         height: 100%;
         width: 33%;
@@ -50,7 +50,7 @@ body {
         padding: 0;
         margin: 0 auto;
         float: none;
-        background-color: red;
+        background-color: lightcoral;
     }
 }
 
