@@ -48,7 +48,7 @@
             $scope.infoJogo = TicTacToeService.resetar();
             $scope.erro = "";
             if (self.vsBot) {
-                self.vezX = true;
+                TicTacToeService.vezX = true;
             }
         };
 
