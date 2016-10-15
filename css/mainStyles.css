@@ -27,15 +27,17 @@ body {
     width: 100%;
     padding: 0px;
     margin-bottom: 2%;
+    background-color: blue; 
 }
 
 .tabuleiro {
     height: 100%;
     width: 33%;
     min-width: 300px;
-    padding: 0% 3%;
+    padding: 0;
     margin: 0 auto;
     float: none;
+    background-color: red;
 }
 
 .linha {
@@ -43,13 +45,15 @@ body {
     width: 100%;
     min-width: 300px;
     background-color: black;
-    margin-top: 3%;
+    margin-top: 2%;
+    padding: 0px;
 }
 
 .sub-linha {
     height: 100%;
     padding-left: 1%;
     padding-right: 1%;
+    background-color: purple;
 }
 
 .casa {
