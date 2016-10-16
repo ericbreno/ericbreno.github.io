@@ -27,7 +27,7 @@ body {
     width: 100%;
     padding: 0px;
     margin-bottom: 2%;
-    background-color: blue;
+    /*background-color: blue;*/
 }
 
 .tabuleiro {
@@ -37,7 +37,7 @@ body {
     padding: 0;
     margin: 0 auto;
     float: none;
-    background-color: lightcoral;
+    /*background-color: lightcoral;*/
 }
 
 @media only screen and (max-device-width: 650px) {
@@ -48,7 +48,7 @@ body {
         padding: 0;
         margin: 0 auto;
         float: none;
-        background-color: mediumpurple;
+        /*background-color: mediumpurple;*/
     }
 }
 
@@ -56,7 +56,7 @@ body {
     height: 31%;
     width: 100%;
     min-width: 300px;
-    background-color: black;
+    /*background-color: black;*/
     margin-top: 2%;
     padding: 0px;
 }
@@ -65,7 +65,7 @@ body {
     height: 100%;
     padding-left: 1%;
     padding-right: 1%;
-    background-color: purple;
+    /*background-color: purple;*/
 }
 
 .casa {
