@@ -5,22 +5,59 @@
     app.service('BotTicTacService', [function () {
         var self = this;
 
-        var X = 'X';
+        var PECA_ADV = 'X';
 
-        var O = 'O';
+        var PECA_BOT = 'O';
+
+        var PRIMEIRA_JOGADA = true;
+
+        var IS_TAB_VAZIO = false;
+
+        var PECA_JOGADA = {};
 
         this.tab;
 
         /**
-         * Realiza uma jogada, verificando as condições atuais do tabuleiro.
+         * Verifica as condições atuais do tabuleiro e decide em
+         * qual casa deve se realizar a jogada, então a retorna.
+         * @param tab Tabuleiro do jogo.
+         * @param peca Peca que está jogando.
+         * @return Casa em que se deve realizar a jogada.
          */
-        this.jogar = function (tab) {
+        this.jogar = function (tab, peca) {
+            if (!isUndf(peca)) {
+                PECA_BOT = peca;
+                PECA_ADV = peca === 'X' ? 'O' : 'X';
+            }
             self.tab = tab;
-            var casa = podeVencerLinhas() || podeVencerColunas() || podeVencerDiagonais()
-                || podePerderLinhas() || podePerderColunas() || podePerderDiagonais()
+            if (PRIMEIRA_JOGADA) {
+                isTabVazio();
+            }
+            var casa = jogarParaVencer()
+                || jogarParaNaoPerder()
+                || armarJogada()
+                || primeiraJogada()
                 || jogaAleatorio();
+            PRIMEIRA_JOGADA = false;
+            IS_TAB_VAZIO = false;
             return casa;
         };
+
+        /**
+         * Verifica se é possível fazer uma jogada e ganhar o jogo, caso seja possível
+         * retorna a casa em que se deve jogar.
+         */
+        function jogarParaVencer() {
+            return podeVencerLinhas() || podeVencerColunas() || podeVencerDiagonais();
+        }
+
+        /**
+         * Verifica se é possível perder o jogo em uma jogada, caso seja possível
+         * retorna a casa que deve ser jogada para não se perder.
+         */
+        function jogarParaNaoPerder() {
+            return podePerderLinhas() || podePerderColunas() || podePerderDiagonais();
+        }
 
         /**
          * Verifica se existe alguma linha prestes a ser perdida, então
@@ -28,7 +65,7 @@
          */
         function podePerderLinhas() {
             for (var i = 0; i < 3; i++) {
-                var casa = podePerderLinha(getTab()[i]);
+                var casa = podeVencerLinha(getTab()[i], PECA_ADV);
                 if (typeof (casa) !== 'undefined') {
                     return casa;
                 }
@@ -41,23 +78,11 @@
          */
         function podePerderColunas() {
             for (var i = 0; i < 3; i++) {
-                var casa = podePerderLinha(colunaComoLinha(i));
+                var casa = podeVencerLinha(colunaComoLinha(i), PECA_ADV);
                 if (typeof (casa) !== 'undefined') {
                     return casa;
                 }
             }
-        }
-
-        /**
-         * Verifica para uma linha passada se existe a chance
-         * do jogador vencer, então retorna a casa que deve se
-         * jogar caso exista.
-         */
-        function podePerderLinha(elems) {
-            return (elems[0].peca === elems[1].peca) && elems[0].peca === X && elems[2].peca !== O ? elems[2]
-                : (elems[0].peca === elems[2].peca) && elems[0].peca === X && elems[1].peca !== O ? elems[1]
-                    : (elems[1].peca === elems[2].peca) && elems[1].peca === X && elems[0].peca !== O ? elems[0]
-                        : undefined;
         }
 
         /**
@@ -66,8 +91,8 @@
          */
         function podePerderDiagonais() {
             var d1 = [getTab()[0][0], getTab()[1][1], getTab()[2][2]];
-            var d2 = [getTab()[2][0], getTab()[1][1], getTab()[0][2]];;
-            return podePerderLinha(d1) || podePerderLinha(d2);
+            var d2 = [getTab()[2][0], getTab()[1][1], getTab()[0][2]];
+            return podeVencerLinha(d1, PECA_ADV) || podeVencerLinha(d2, PECA_ADV);
         }
 
         /**
@@ -109,18 +134,22 @@
          */
         function podeVencerDiagonais() {
             var d1 = [getTab()[0][0], getTab()[1][1], getTab()[2][2]];
-            var d2 = [getTab()[2][0], getTab()[1][1], getTab()[0][2]];;
+            var d2 = [getTab()[2][0], getTab()[1][1], getTab()[0][2]];
+            ;
             return podeVencerLinha(d1) || podeVencerLinha(d2);
         }
 
         /**
-         * Verifica se o bot pode vencer marcando alguma casa da linha passada,
+         * Verifica se a peca passada pode vencer marcando alguma casa da linha passada,
          * então retorna a casa.
          */
-        function podeVencerLinha(elems) {
-            return (elems[0].peca === elems[1].peca) && elems[0].peca === O && elems[2].peca !== X ? elems[2]
-                : (elems[0].peca === elems[2].peca) && elems[0].peca === O && elems[1].peca !== X ? elems[1]
-                    : (elems[1].peca === elems[2].peca) && elems[1].peca === O && elems[0].peca !== X ? elems[0]
+        function podeVencerLinha(elems, peca) {
+            if (isUndf(peca)) {
+                peca = PECA_BOT;
+            }
+            return (elems[0].peca === elems[1].peca) && elems[0].peca === peca && isUndf(elems[2].peca) ? elems[2]
+                : (elems[0].peca === elems[2].peca) && elems[0].peca === peca && isUndf(elems[1].peca) ? elems[1]
+                    : (elems[1].peca === elems[2].peca) && elems[1].peca === peca && isUndf(elems[0].peca) ? elems[0]
                         : undefined;
         }
 
@@ -150,5 +179,249 @@
             }
         }
 
+        /**
+         * Verifica se existe a possibilidade de armar alguma
+         * jogada no tabuleiro, caso seja possível retorna
+         * a casa que deve ser jogada.
+         */
+        function armarJogada() {
+            return armarDoisLugares() || armarUmLugar();
+        }
+
+        /**
+         * Verifica se é possível fazer uma jogada que arma para
+         * se poder vencer em duas casas.
+         * @returns Casa a ser jogada, caso seja possível.
+         */
+        function armarDoisLugares() {
+            var diag = podeArmarDiagonal() || [];
+            var lin = [];
+            var col = [];
+            for (var i = 0; i < 3; i++) {
+                var l = podeArmarLinha(i);
+                var c = podeArmarColuna(i);
+                if (l) {
+                    lin = l;
+                }
+                if (c) {
+                    col = c;
+                }
+            }
+            return diag.lenth > 0 && col.length > 0
+                ? acharComum(diag, col) : diag.lenth > 0 && lin.length > 0
+                    ? acharComum(diag, lin) : lin.length > 0 && col.length > 0
+                        ? acharComum(lin, col) : null;
+        }
+
+        /**
+         * Acha a casa em comum entre as duas listas de posições.
+         * @param posicoes1 Primeira lista de casas.
+         * @param posicoes2 Segunda lista de casas.
+         * @returns Casa em comum.
+         */
+        function acharComum(posicoes1, posicoes2) {
+            for (var i = 0; i < posicoes1.length; i++) {
+                for (var j = 0; j < posicoes2.length; j++) {
+                    if (posicoes1[i].x === posicoes2[j].x && posicoes1[i].y === posicoes2[j].y) {
+                        return getTab()[posicoes1[i].x][posicoes1[i].y];
+                    }
+                }
+            }
+        }
+
+        /**
+         * Verifica se pode armar alguma jogada que deixe disponível
+         * uma casa possível para a vitória, caso seja possível
+         * retorna a casa que deve ser jogada.
+         */
+        function armarUmLugar() {
+            var res = podeArmarDiagonal();
+            for (var i = 0; i < 3; i++) {
+                if (res && decidirEntrePossiveisArmar(res)) {
+                    return decidirEntrePossiveisArmar(res);
+                }
+                res = podeArmarColuna(i) || podeArmarLinha(i);
+            }
+            if (res) {
+                return decidirEntrePossiveisArmar(res);
+            }
+        }
+
+        /**
+         * Decide entre as possibilidades de jogada onde se deve
+         * jogar. Escolhendo a melhor opção de acordo com a
+         * configuração do tabuleiro.
+         * Ordem da verificação:
+         * 1 - O adversário fechou minha peça em um canto.
+         * 2 - Adversário armando tipo 1, jogar em uma das quinas.
+         * 3 - Deixar de jogar no meio se possível.
+         * 4 - Não está armando no tipo 1, então pode jogar no meio.
+         * @param possiveis Possiveis lugares a se jogar.
+         * @returns Casa a ser jogada.
+         */
+        function decidirEntrePossiveisArmar(possiveis) {
+            var armandoTipoUm = oponenteArmandoUm();
+            var fechouTipoUm = oponenteFechouTipoUm();
+            var existeMelhorOpcao = possiveis.length > 1
+                && armandoTipoUm
+                && ((possiveis[1].x === 2 || possiveis[1].x === 0) && (possiveis[1].y === 2 || possiveis[1].y === 0));
+            if (fechouTipoUm && isUndf(getTab()[1][1].peca)) {
+                return getTab()[1][1];
+            }
+            if (existeMelhorOpcao) {
+                return getTab()[possiveis[1].x][possiveis[1].y];
+            }
+            var podeNaoJogarMeio = possiveis.length > 1
+                && possiveis[0].x === possiveis[0].y && possiveis[0].x === 1;
+            if (podeNaoJogarMeio && armandoTipoUm) {
+                return getTab()[possiveis[1].x][possiveis[1].y];
+            } else if (!armandoTipoUm) {
+                return getTab()[possiveis[0].x][possiveis[0].y];
+            }
+        }
+
+        /**
+         * Verifica se o adversário está armando uma jogada com peças
+         * no tipo:
+         * - X -
+         * X - -
+         * - - -
+         * ou qualquer variante.
+         */
+        function oponenteArmandoUm() {
+            var t = getTab();
+            return (t[0][1].peca === PECA_ADV || t[2][1].peca === PECA_ADV)
+                && (t[1][0].peca === PECA_ADV || t[1][2].peca === PECA_ADV);
+        }
+
+        /**
+         * Verifica se o adversário fechou minha peça no tipo:
+         * O X -
+         * X - -
+         * - - -
+         * ou qualquer variante
+         */
+        function oponenteFechouTipoUm() {
+            var t = getTab();
+            return t[0][0].peca === PECA_BOT && t[1][0].peca === PECA_ADV && t[0][1].peca === PECA_ADV ? t[0][0] :
+                t[0][2].peca === PECA_BOT && t[1][2].peca === PECA_ADV && t[0][1].peca === PECA_ADV ? t[0][2] :
+                    t[2][2].peca === PECA_BOT && t[1][2].peca === PECA_ADV && t[2][1].peca === PECA_ADV ? t[2][2] :
+                        t[2][0].peca === PECA_BOT && t[2][1].peca === PECA_ADV && t[1][0].peca === PECA_ADV ? t[2][0] : null;
+
+
+        }
+
+        /**
+         * Verifica se pode armar uma jogada para ganhar em
+         * alguma das colunas, caso seja possível retorna
+         * as posições em que se pode jogar.
+         */
+        function podeArmarColuna(coluna) {
+            var linha = [getTab()[0][coluna], getTab()[1][coluna], getTab()[2][coluna]];
+            var res = checaArmarLinha(linha);
+            if (res) {
+                var posicoes = vPos(res.x);
+                return [new Pos(posicoes[0], coluna), new Pos(posicoes[1], coluna)];
+            }
+        }
+
+        /**
+         * Verifica se pode armar uma jogada para ganhar
+         * em alguma das diagonais, caso seja possível retornar
+         * as posições em que se pode jogar.
+         */
+        function podeArmarDiagonal() {
+            var d1 = [getTab()[0][0], getTab()[1][1], getTab()[2][2]];
+            var d2 = [getTab()[2][0], getTab()[1][1], getTab()[0][2]];
+            var res = checaArmarLinha(d1);
+            if (res) {
+                var posicoes = vPos(res.x);
+                return [new Pos(posicoes[0], posicoes[0]), new Pos(posicoes[1], posicoes[1])];
+            }
+            res = checaArmarLinha(d2);
+            if (res) {
+                var posicoes = vPos(res.x);
+                var invs = [2, 1, 0];
+                return [new Pos(posicoes[0], invs[posicoes[0]]), new Pos(posicoes[0], invs[posicoes[2]])];
+            }
+        }
+
+        /**
+         * Verifica se pode armar uma jogada para ganhar
+         * em alguma das linhas, caso seja possível retorna
+         * as posições em que se pode jogar.
+         */
+        function podeArmarLinha(linha) {
+            var res = checaArmarLinha(getTab()[linha]);
+            if (res) {
+                var posicoes = vPos(res.y);
+                return [new Pos(linha, posicoes[0]), new Pos(linha, posicoes[1])];
+            }
+        }
+
+        /**
+         * Checa se pode armar uma jogada para ganhar na linha passada, caso
+         * seja possível, retorna a casa com a peça do bot.
+         */
+        function checaArmarLinha(lista) {
+            return lista[0].peca === PECA_BOT && isUndf(lista[1].peca) && isUndf(lista[2].peca)
+                ? lista[0] : lista[1].peca === PECA_BOT && isUndf(lista[0].peca) && isUndf(lista[2].peca)
+                    ? lista[1] : lista[2].peca === PECA_BOT && isUndf(lista[0].peca) && isUndf(lista[1].peca)
+                        ? lista[2] : null;
+        }
+
+        /**
+         * Realiza a primeira jogada para o bot.
+         */
+        function primeiraJogada() {
+            if (PRIMEIRA_JOGADA) {
+                var vsQuina = { 0: { 0: [1, 2], 2: [1, 0] }, 2: { 0: [1, 2], 2: [1, 0] } };
+                if (!isUndf(vsQuina[PECA_JOGADA.x]) && !isUndf(vsQuina[PECA_JOGADA.x][PECA_JOGADA.y])) {
+                    var pos = vsQuina[PECA_JOGADA.x][PECA_JOGADA.y];
+                    return getTab()[pos[0]][pos[1]];
+                }
+                var i = Math.random() > 0.5 ? 0 : 2,
+                    j = Math.random() > 0.5 ? 0 : 2;
+                return getTab()[i][j];
+            }
+        }
+
+        /**
+         * Verifica se o tabuleiro está vazio.
+         */
+        function isTabVazio() {
+            IS_TAB_VAZIO = true;
+            for (var i = 0; i < 3; i++) {
+                for (var j = 0; j < 3; j++) {
+                    var peca = getTab()[i][j];
+                    if (!isUndf(peca.peca)) {
+                        PECA_JOGADA = peca;
+                        IS_TAB_VAZIO = false;
+                        return;
+                    }
+                }
+            }
+        }
+
+        /**
+         * Retorna uma lista com os número de zero a 3 exceto o passado.
+         */
+        function vPos(x) {
+            return [(x + 1) % 3, (x + 2) % 3];
+        }
+
+        /**
+         * @return True se o parametro for undefined ou null.
+         */
+        function isUndf(e) {
+            return typeof (e) === 'undefined' || e === null;
+        }
+
+        function Pos(x, y) {
+            return {
+                x: x,
+                y: y
+            };
+        }
     }])
 } ())
