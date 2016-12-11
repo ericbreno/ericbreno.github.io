@@ -1,2 +1,2 @@
-# Tic-Tac-Toe (Jogo da velha)
-Simples jogo da velha feito utilizando Javascript (Angular) e html com css(bootstrap)
+# Linear System Solver
+Solucionador simples, implementado para fins de estudo, que resolve sistemas lineares
