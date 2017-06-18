@@ -9,7 +9,7 @@
 seriesModule.directive('seriesListing', ['UserService', 'ModalService', 'OMDbService', '$rootScope', function (UserService, ModalService, OMDbService, $rootScope) {
     return {
         restrict: 'E',
-        templateUrl: '/view/seriesListing.html',
+        templateUrl: 'view/seriesListing.html',
         scope: {
             seriesList: '=',
             viewDetails: '=?',
