@@ -6,10 +6,10 @@ const searchModule = angular.module('searchModule', []);
 const app = angular.module('siApp', ['ui.router', 'ngMaterial', 'seriesModule', 'OMDbModule', 'userModule', 'searchModule']);
 
 app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', '$provide', '$httpProvider', function ($stateProvider, $locationProvider, $urlRouterProvider, $provide, $httpProvider) {
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
+    // $locationProvider.html5Mode({
+    //     enabled: true,
+    //     requireBase: false
+    // });
 
     $urlRouterProvider.otherwise('/home');
 
