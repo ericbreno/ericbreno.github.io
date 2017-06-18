@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Minhas Séries</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.css" />
+    <!--<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body ng-app="siApp" ng-strict-di data-md-colors="::colors.background">
+    <main-toolbar></main-toolbar>
+    <md-progress-linear data-ng-disabled="!onRequest" md-mode="indeterminate"></md-progress-linear>
+    <div flex data-ui-view></div>
+
+    <!-- Base -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+
+    <!-- AngularJS Material Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-aria.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.js"></script>
+
+    <!-- Config -->
+    <script type="text/javascript" src="js/config.js"></script>
+
+    <!-- Factory -->
+    <script type="text/javascript" src="js/factory/Series.js"></script>
+    <script type="text/javascript" src="js/factory/User.js"></script>
+
+    <!-- Service -->
+    <script type="text/javascript" src="js/service/ModalService.js"></script>
+    <script type="text/javascript" src="js/service/OMDbService.js"></script>
+    <script type="text/javascript" src="js/service/UserService.js"></script>
+
+    <!-- Controller -->
+    <script type="text/javascript" src="js/controller/HomePageController.js"></script>
+    <script type="text/javascript" src="js/controller/ProfilePageController.js"></script>
+    <script type="text/javascript" src="js/controller/ViewSeriesController.js"></script>
+    <script type="text/javascript" src="js/controller/WatchlistController.js"></script>
+
+    <!-- Directive -->
+    <script type="text/javascript" src="js/directive/ToolbarDirective.js"></script>
+    <script type="text/javascript" src="js/directive/SeriesListingDirective.js"></script>
+</body>
+
+</html>

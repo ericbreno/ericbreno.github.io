@@ -1,0 +1,63 @@
+<md-content>
+    <div layout-wrap layout="row"
+        layout-align="space-around start" 
+        class="carddemoBasicUsage" 
+        data-ng-if="hasSeries()"
+        data-md-colors="::colors.background">
+        
+        <!-- Series card -->
+        <md-card data-layout="column" 
+            data-ng-repeat="series in seriesList track by $index"
+            data-md-colors="::colors.cardColor">
+
+            <!--Series name-->
+            <span data-layout-padding 
+                class="md-title">
+                {{ series.title }}
+            </span>
+            <!--end Series name-->
+            <md-divider></md-divider>
+            <!--Poster-->
+            <img data-ng-src="{{ series.posterUrl }}"
+                class="md-card-image" 
+                alt="{{ series.title }}"
+                data-ng-click="viewDetails(series)"
+                data-layout-padding
+                data-flex="40">
+            <!--end Poster-->
+
+            <br>
+
+            <!--Buttons-->
+            <div class="md-actions" data-layout="row" data-layout-align="center center">
+                <md-button class="md-raised md-warn" flex
+                        aria-label="delete-series" 
+                        data-ng-click="removeSeries($index)"
+                        data-ng-if="removeSeries">
+                        Remover
+                </md-button>
+                <md-button class="md-raised" flex
+                        data-ng-click="addToWatchlist(series)"
+                        data-ng-if="!isWatchlist && !isUserView"
+                        data-md-colors="colors.watchlistButton">
+                        Watchlist
+                </md-button>
+                <md-button class="md-raised" flex
+                        data-ng-click="addToUser(series)"
+                        data-ng-if="!isUserView"
+                        data-md-colors="colors.profileButton">
+                    Perfil
+                </md-button>
+            </div>
+            <!--end Buttons-->
+        </md-card>
+        <!-- end Series card -->
+    </div>
+
+    <div data-layout="column" 
+        data-ng-if="!hasSeries()" 
+        data-layout-padding
+        data-md-colors="::colors.background">
+        <span class="md-display-1">Nenhuma série a ser mostrada.</span>
+    </div>
+</md-content>

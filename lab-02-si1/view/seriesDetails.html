@@ -1,0 +1,59 @@
+<md-dialog aria-label="series-view">
+    <md-dialog-content>
+        <div class="md-dialog-content"
+            data-layout="column"
+            data-layout-wrap>
+            
+            <div layout="row"
+                data-layout-align="center start">
+              <img data-flex="30" 
+                data-layout-padding 
+                data-ng-src="{{ viewSeriesCtrl.series.posterUrl }}" 
+                class="md-card-image viewSeriesCtrl.series-poster" 
+                alt="{{ viewSeriesCtrl.series.title }}">
+
+              <div data-flex="70"
+                  data-layout="column"
+                  data-layout-align="space-around start"
+                  data-layout-padding>
+                <span class="md-display-1">{{ viewSeriesCtrl.series.title }}</span>
+                
+                <br>
+                <span class="md-title">Sinopse</span>
+                <span class="md-subhead">{{ viewSeriesCtrl.series.plot }}</span>
+
+                <md-divider md-inset></md-divider>
+                <div layout="row" layout-align="space-around center">
+                    <div layout="column">
+                      <span class="md-title">Classificação etária: {{ viewSeriesCtrl.series.rated }}</span>
+                      <span class="md-title">Média IMDb: {{ viewSeriesCtrl.series.imdbRating }}</span>
+                    </div>
+                    <span flex></span>
+                    <div flex>
+                      <md-input-container>
+                        <label>Avaliação</label>
+                        <input type="number" min="1" max="5" data-ng-model="viewSeriesCtrl.series.userNote">
+                      </md-input-container>
+                    </div>
+                </div>
+
+                <md-divider md-inset></md-divider>
+                <div>
+                  <span class="md-title">Último episódio assistido</span>
+                </div>
+                
+                <div data-layout="row">
+                  <md-input-container>
+                    <label>Temporada</label>
+                    <input type="number" min="1" data-ng-model="viewSeriesCtrl.series.lastWatched.season">
+                  </md-input-container>
+                  <md-input-container>
+                    <label>Episódio</label>
+                    <input type="text" data-ng-model="viewSeriesCtrl.series.lastWatched.episode">
+                  </md-input-container>
+                </div>
+              </div>
+            </div>
+        </div>
+    </md-dialog-content>
+</md-dialog>

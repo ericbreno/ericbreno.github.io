@@ -1,0 +1,38 @@
+body {
+  height: 100%;
+}
+
+.corpo {
+  height: 100%;
+}
+
+.series-poster {
+  max-height: 240px;
+}
+
+md-toolbar {
+  min-height: 50px;
+  height: 50px;
+}
+
+#search-container {
+  margin-top: 13%;
+}
+
+md-divider {
+  min-width: 70%;
+}
+
+.nice-hover:hover {
+  color: red;
+  background-color: lightgray;
+  transition: 0.5s;
+}
+
+.md-button.md-fab:not([disabled]), .md-button.md-fab:not([disabled]):hover {
+   background-color: lightgray;
+}
+
+.vertical-bar {
+  border-right: 1px solid lightgray;
+}

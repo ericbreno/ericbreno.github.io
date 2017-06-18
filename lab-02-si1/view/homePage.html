@@ -1,0 +1,40 @@
+<md-content data-layout-align="start center" 
+            data-layout="column" 
+            data-ng-cloak 
+            data-layout-wrap
+            data-md-colors="::colors.background">
+    
+    <form data-ng-submit="homeCtrl.findSeries(name)" 
+        data-layout="row" 
+        data-layout-padding>
+        
+        <!-- Search toolbar -->
+        <md-toolbar class="md-whiteframe-5dp" 
+            id="searchbar" 
+            data-md-colors="colors.searchBar">
+            <div class="md-toolbar-tools" 
+                data-layout-align="center center" 
+                data-layout-padding>
+                
+                <!-- Search input -->
+                <md-input-container id="search-container" md-no-float flex>
+                    <input placeholder="Buscar série" data-ng-model="name" id="searchbarInput">
+                </md-input-container>
+                <!-- end Search input -->
+                <!-- Search button -->
+                <md-button hide-xs 
+                    aria-label="search-button" 
+                    id="search-button" 
+                    class="md-icon-button" 
+                    type="submit">
+                    <i class="fa fa-search"></i>
+                </md-button>
+                <!-- end Search button -->
+            </div>
+        </md-toolbar>
+        <!-- end Search toolbar -->
+    </form>
+
+    <!-- Series listing -->
+    <series-listing is-user-view="false" series-list="homeCtrl.getSeries()"></series-listing>
+</md-content>

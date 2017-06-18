@@ -1,0 +1,14 @@
+<md-toolbar md-scroll-shrink data-md-colors="::colors.topBar">
+    <div class="md-toolbar-tools" layout-padding>
+        <md-button flex="10" 
+                class="md-icon-button" 
+                data-ng-repeat="state in getStates() track by $index"
+                ng-click="go(state)">
+            {{ getStateName(state).toUpperCase() }}
+        </md-button>
+        <span flex></span>
+        <span md-display-2>Minhas Séries</span>
+        <span flex></span>
+        <span flex="20"></span>
+    </div>
+</md-toolbar>
