@@ -16,17 +16,17 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', '$provi
     $stateProvider
         .state('profile', {
             url: '/profile',
-            templateUrl: 'lab-02-si1/view/profilePage.html',
+            templateUrl: '/view/profilePage.html',
             controller: 'ProfilePageController as profileCtrl'
         })
         .state('home', {
             url: '/home',
-            templateUrl: 'lab-02-si1/view/homePage.html',
+            templateUrl: '/view/homePage.html',
             controller: 'HomePageController as homeCtrl'
         })
         .state('watchlist', {
             url: '/watchlist',
-            templateUrl: 'lab-02-si1/view/watchlist.html',
+            templateUrl: '/view/watchlist.html',
             controller: 'WatchlistController as watchlistCtrl'
         });
 
