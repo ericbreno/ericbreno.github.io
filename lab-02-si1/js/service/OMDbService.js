@@ -6,7 +6,7 @@ OMDBModule.service('OMDbService', ['$http', 'Series', function ($http, Series) {
 
     const API_KEY = '93330d3c';
     const RETURN_JSON_PARAM = '&r=json';
-    const DATA_ENDPOINT = `http://www.omdbapi.com/?apikey=${API_KEY}${RETURN_JSON_PARAM}`;
+    const DATA_ENDPOINT = `https://www.omdbapi.com/?apikey=${API_KEY}${RETURN_JSON_PARAM}`;
     const TITLE_SEARCH_PARAM = '&s=';
     const TYPE_PARAM = '&type=';
     const SERIES_PARAM = `${TYPE_PARAM}series`;
