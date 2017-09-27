@@ -1,53 +1,220 @@
-<!DOCTYPE html>
-
 <head>
-    <meta charset="utf-8">
-    <title>Eric's Page</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Jogo do milhão</title>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css"/>
+
+    <style>
+        .elemento {
+            width: 15px; 
+            height: 15px;
+            display: inline-block;
+            margin: -2px;
+            border: 1px solid #e8e8e8;
+        }
+
+        .elemento-ativo {
+            background-color:lightgray; 
+        }
+
+        .elemento-inativo {
+            background-color:black; 
+        }
+
+        .tab-block {
+            margin-left: 2%;
+            margin-top: 3%;
+        }
+
+        body {
+            min-width: 400px;
+        }
+
+    </style>
 </head>
 
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="jumbotron well text-center">
-                    <h1>
-                        Minha página inicial :)
-                    </h1>
-                    <p>
-                        Aqui você vai encontrar algumas coisas legais, ou nem tanto, que acabei fazendo por algum motivo aleatório qualquer e que podem vir a ser útil, ou não. Have fun!
-                    </p>
-                </div>
-                <div class="text text-center">
-                    <h3>
-                        Em Construção
-                    </h3>
-                </div>
-                <!--<div class="text-center">
-                    <h4>
-                        <a href="https://ericbreno.github.io/tic-tac-toe">
-                        Jogo da Velha
-                        </a>
-                    </h4>
-                    <p>
-                        Que tal jogar um pouco de tempo fora desafiando meu bot no jogo da velha, ou jogando com algum amigo?
-                    </p>
-                    <h4>
-                        <a href="https://ericbreno.github.io/linear-solver">
-                        Linear Solver
-                        </a>
-                    </h4>
-                    <p>
-                        Que tal resolver uns sistemas lineares, só pelo role?
-                    </p>
-                </div>-->
-            </div>
+<body ng-app="jogo" ng-controller="jogoController as ctrl">
+    <div class="tab-block">
+        <h3>
+            Selecione algumas casas e inicie! :D
+        </h3>
+
+        <div ng-repeat="linha in ctrl.getMatriz() track by $index" style="margin: -4px;">
+            <span ng-repeat="elemento in linha track by $index"
+                ng-click="ctrl.addCasa(elemento)">
+                <span ng-if="$debug">{{ elemento.vizinhos }}</span>
+                <span ng-if="!$debug && elemento.valor" class="elemento elemento-inativo"></span>
+                <span ng-if="!$debug && !elemento.valor" class="elemento elemento-ativo"></span>
+            </span>
+        </div>
+        
+        <div>
+            <h2>Gerações sobrevividas: {{ ctrl.geracoes }}</h2>
+            <h2>Casas adicionadas: {{ ctrl.casas }}</h2>
+        </div>
+        
+        <div>
+            <button ng-disabled="ctrl.running" ng-click="ctrl.run()">Start</button>
+            <!-- <button ng-click="$debug = !$debug">Debug</button> -->
+            <!-- <button ng-click="ctrl.stop = true">Stop</button> -->
+            <button ng-click="ctrl.reset()">Reset</button>
         </div>
     </div>
-    <!-- Base -->
-    <script type="text/javascript" src="js/angular.min.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
+    <script>
+        const app = angular.module("jogo", []);
+
+        app.controller('jogoController', ['$scope', function ($scope) {
+            const self = this;
+
+            const TICK = 850;
+
+            const tam = 25;
+            const matriz = [];
+
+            this.geracoes = 0;
+            this.casas = 0;
+            this.stop = false;
+            this.running = false;
+
+            this.addCasa = elemento => {
+                if (this.running)
+                    this.casas++;
+                elemento.valor = (elemento.valor + 1) % 2;
+            };
+
+            this.getMatriz = () => matriz;
+
+            const countVizinhos = (x, y) => {
+                const vizinhos = getVizinhos(x, y);
+                const qtdVizinhos = _.sumBy(vizinhos, pos => matriz[pos.x][pos.y].valor);
+                return qtdVizinhos;
+            };
+
+            const getVizinhos = (x, y) => {
+                const mod = n => n < 0 ? tam + n : n % tam;
+                return [
+                        {x, y: mod(y+1)}, 
+                        {x, y: mod(y-1)},
+                        {x: mod(x+1), y},
+                        {x: mod(x-1), y},
+                        {x: mod(x+1), y: mod(y+1)},
+                        {x: mod(x-1), y: mod(y+1)},
+                        {x: mod(x+1), y: mod(y-1)},
+                        {x: mod(x-1), y: mod(y-1)}
+                ];
+            };
+
+            this.reset = () => {
+                this.running = false;
+                this.stop = true;
+                applyToMatrix(e => e.valor = 0);
+            };
+            
+            this.run = () => {
+                this.running = true;
+                this.geracoes = 0;
+                runLoop();
+            };
+            
+            const runLoop = () => {
+                this.geracoes++;
+                updateVizinhos();
+    
+                let houveMudanca = false;
+                houveMudanca = limparSolidao() || houveMudanca;
+                houveMudanca = limparSuperpop() || houveMudanca;
+                houveMudanca = reviveCelulas() || houveMudanca;
+                this.stop |= !houveMudanca;
+                
+                setTimeout(() => {
+                    if (this.stop) {
+                        this.stop = false;
+                        this.running = false;
+                        $scope.$digest();
+                    } else {
+                        runLoop();
+                        $scope.$digest();
+                    }
+                }, TICK);
+            };
+
+            const updateVizinhos = () => {
+                _.each(matriz, (linha, x) => {
+                    _.each(linha, (elemento, y) => {
+                        elemento.vizinhos = countVizinhos(x, y);
+                    });
+                });
+            };
+
+            const reviveCelulas = () => {
+                let reviveu = false;
+                applyToMatrix(e => {
+                    if (e.valor === 0 && e.vizinhos === 3) {
+                        e.valor = 1;
+                        reviveu = true;
+                    }
+                });
+                return reviveu;
+            };
+
+            const limparSolidao = () => {
+                let limpou = false;
+                applyToMatrix(e => {
+                    if (e.valor !== 0 && e.vizinhos < 2) {
+                        e.valor = 0;
+                        limpou = true;
+                    }
+                });
+                return limpou;
+            };
+
+            const limparSuperpop = () => {
+                let limpou = false;
+                applyToMatrix(e => {
+                    if (e.valor !== 0 && e.vizinhos > 3) {
+                        e.valor = 0;
+                        limpou = true;
+                    }
+                });
+                return limpou;
+            };
+
+            /**
+             * Faz o que o nome diz.
+             * 
+             * @param {*} fn 
+             */
+            const applyToMatrix = fn => {
+                _.each(matriz, (linha, x) => {
+                    _.each(linha, (elemento, y) => {
+                        fn(elemento, x, y);
+                    });
+                });
+            };
+
+            const makeGlider = () => {
+                matriz[2][1].valor = 1;
+                matriz[2][2].valor = 1;
+                matriz[2][3].valor = 1;
+                matriz[3][1].valor = 1;
+                matriz[4][2].valor = 1;
+            };
+
+            (() => {
+                for (let i = tam; i > 0; i--) {
+                    const linha = [];
+                    for (let j = 0; j < tam; j++) {
+                        linha.push({ valor: 0, vizinhos: 0 });
+                    }
+                    matriz.push(linha);
+                }
+
+                makeGlider();
+            })();
+        }]);
+    </script>
 </body>
