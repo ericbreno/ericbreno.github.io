@@ -4,10 +4,10 @@
 
     <style>
         .elemento {
-            width: 15px; 
-            height: 15px;
+            width: 9px; 
+            height: 9px;
             display: inline-block;
-            margin: -2px;
+            margin: -3px;
             border: 1px solid #e8e8e8;
         }
 
@@ -24,6 +24,10 @@
             margin-top: 3%;
         }
 
+        .linha-matriz {
+            height: 9px;
+        }
+
         body {
             min-width: 400px;
         }
@@ -37,8 +41,8 @@
             Selecione algumas casas e inicie! :D
         </h3>
 
-        <div ng-repeat="linha in ctrl.getMatriz() track by $index" style="margin: -4px;">
-            <span ng-repeat="elemento in linha track by $index"
+        <div ng-repeat="linha in ctrl.getMatriz() track by $index" class="linha-matriz">
+            <span class="linha-matriz" ng-repeat="elemento in linha track by $index"
                 ng-click="ctrl.addCasa(elemento)">
                 <span ng-if="$debug">{{ elemento.vizinhos }}</span>
                 <span ng-if="!$debug && elemento.valor" class="elemento elemento-inativo"></span>
@@ -55,8 +59,11 @@
             <button ng-disabled="ctrl.running" ng-click="ctrl.run()">Start</button>
             <!-- <button ng-click="$debug = !$debug">Debug</button> -->
             <!-- <button ng-click="ctrl.stop = true">Stop</button> -->
+            <!-- <button ng-click="ctrl.reset(); ctrl.setx($x); ctrl.sety($y)">Reset</button> -->
             <button ng-click="ctrl.reset()">Reset</button>
         </div>
+        <!-- <input type="number" id="" placeholder="y" ng-model="$y">
+        <input type="number" id="" placeholder="x" ng-model="$x"> -->
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
@@ -68,10 +75,14 @@
         app.controller('jogoController', ['$scope', function ($scope) {
             const self = this;
 
-            const TICK = 350;
+            const TICK = 250;
 
-            const tam = 25;
+            let tamx = 45;
+            let tamy = 100;
             const matriz = [];
+
+            this.setx = x => tamx = x;
+            this.sety = y => tamy = y;
 
             this.geracoes = 0;
             this.casas = 0;
@@ -93,7 +104,10 @@
             };
 
             const getVizinhos = (x, y) => {
-                const mod = n => n < 0 ? tam + n : n % tam;
+                // descomentar para tabuleiro infinito
+                const mod = n => n; //n < 0 ? tam + n : n % tam;
+                const inRangex = n => n < tamx && n >= 0;
+                const inRangey = n => n < tamy && n >= 0;
                 return [
                         {x, y: mod(y+1)}, 
                         {x, y: mod(y-1)},
@@ -103,7 +117,7 @@
                         {x: mod(x-1), y: mod(y+1)},
                         {x: mod(x+1), y: mod(y-1)},
                         {x: mod(x-1), y: mod(y-1)}
-                ];
+                ].filter(e => inRangex(e.x) && inRangey(e.y));
             };
 
             this.reset = () => {
@@ -111,6 +125,8 @@
                 this.stop = true;
                 applyToMatrix(e => e.valor = 0);
                 this.stop = false;
+
+                // makeMatrix();
             };
             
             this.run = () => {
@@ -125,9 +141,12 @@
                 updateVizinhos();
     
                 let houveMudanca = false;
-                houveMudanca = limparSolidao() || houveMudanca;
-                houveMudanca = limparSuperpop() || houveMudanca;
-                houveMudanca = reviveCelulas() || houveMudanca;
+                applyToMatrix(e => {
+                    const old = e.valor;
+                    if (e.vizinhos < 2 || e.vizinhos > 3) e.valor = 0;
+                    else if (e.vizinhos === 3) e.valor = 1;
+                    houveMudanca = houveMudanca || e.valor !== old;
+                });
                 this.stop |= !houveMudanca;
                 
                 setTimeout(() => {
@@ -148,39 +167,6 @@
                         elemento.vizinhos = countVizinhos(x, y);
                     });
                 });
-            };
-
-            const reviveCelulas = () => {
-                let reviveu = false;
-                applyToMatrix(e => {
-                    if (e.valor === 0 && e.vizinhos === 3) {
-                        e.valor = 1;
-                        reviveu = true;
-                    }
-                });
-                return reviveu;
-            };
-
-            const limparSolidao = () => {
-                let limpou = false;
-                applyToMatrix(e => {
-                    if (e.valor !== 0 && e.vizinhos < 2) {
-                        e.valor = 0;
-                        limpou = true;
-                    }
-                });
-                return limpou;
-            };
-
-            const limparSuperpop = () => {
-                let limpou = false;
-                applyToMatrix(e => {
-                    if (e.valor !== 0 && e.vizinhos > 3) {
-                        e.valor = 0;
-                        limpou = true;
-                    }
-                });
-                return limpou;
             };
 
             /**
@@ -204,15 +190,19 @@
                 matriz[4][2].valor = 1;
             };
 
-            (() => {
-                for (let i = tam; i > 0; i--) {
+            const makeMatrix = () => {
+                matriz.splice(0, matriz.length);
+                for (let i = tamx; i > 0; i--) {
                     const linha = [];
-                    for (let j = 0; j < tam; j++) {
+                    for (let j = 0; j < tamy; j++) {
                         linha.push({ valor: 0, vizinhos: 0 });
                     }
                     matriz.push(linha);
                 }
+            }
 
+            (() => {
+                makeMatrix();
                 makeGlider();
             })();
         }]);
