@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <title>Emojify do emojify</title>
+
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        h2 {
+            background: linear-gradient(rgb(228, 171, 171), rgb(209, 225, 29));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .main {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 16px;
+        }
+
+        .entry,
+        .output {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .entry>input {
+            height: 2.5em;
+            width: 20em;
+            max-width: 95vw;
+        }
+
+        .type-selector {
+            margin-right: -80px;
+        }
+
+        .copy {
+            margin-top: 1em;
+        }
+
+        .copy>button {
+            width: 6em;
+            padding: 3px 15px;
+            font-size: 1.3em;
+            background: linear-gradient(rgb(209 168 168), rgb(209, 225, 29));
+            transition: .2s;
+        }
+
+        .copy>button:hover {
+            opacity: .8;
+            cursor: pointer;
+        }
+
+        .output {
+            margin-top: 1em;
+            white-space: pre;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <h2>Emojificador v0</h2>
+
+        <div class="entry">
+            <textarea id="inp" rows="8" cols="60" type="text" onkeyup="generateOutput()" onpaste="generateOutput()"
+                onclick="generateOutput()"></textarea>
+
+            <div class="type-selector" onclick="generateOutput()">
+                <input type="radio" id="white" name="color" value="white">
+                <label for="white">Branco</label><br>
+                <input type="radio" id="yellow" name="color" value="yellow">
+                <label for="yellow">Amarelo</label><br>
+            </div>
+        </div>
+
+        <div class="copy">
+            <button id="copyButton" onclick="copy()">Copiar</button>
+        </div>
+
+        <div class="output">
+            <span id="output"></span>
+        </div>
+    </div>
+
+    <script>
+        const others = {
+            '?': 'question',
+            '!': 'exclamation',
+            '#': 'hash',
+            '@': 'at'
+        }
+
+        const whiteRadio = document.getElementById('white')
+        whiteRadio.checked = true
+
+        const isWhite = () => whiteRadio.checked
+        const getColor = () => isWhite() ? 'white' : 'yellow'
+
+        const lower = c => c.toLowerCase()
+        const validate = c => /[a-zA-Z]|\?|@|#|!/g.test(c)
+        const map = c => `:alphabet-${getColor()}-${c}:`
+        const output = document.getElementById('output')
+        const inp = document.getElementById('inp')
+
+
+        const generateOutput = () => {
+            const str = inp.value
+            let out = ''
+
+            for (let i = 0; i < str.length; i++) {
+                const char = str[i]
+
+                if (validate(char)) {
+                    out += map(others[char] || lower(char))
+                } else {
+                    out += char
+
+                    if (char === ' ') {
+                        out += '   '
+                    }
+                }
+            }
+
+            output.innerHTML = out
+        }
+
+        function copy() {
+            const output = document.getElementById('output')
+            const textArea = document.createElement("textarea")
+            textArea.value = output.innerText
+
+            document.body.appendChild(textArea)
+
+            textArea.select()
+            document.execCommand("Copy")
+            textArea.remove()
+
+            const btn = document.getElementById('copyButton')
+            const preText = btn.innerText
+            const preBG = btn.style.background
+
+            btn.style.background = 'linear-gradient(rgb(98 229 47), rgb(209, 225, 29))'
+            btn.innerText = 'Copiado!'
+
+            setTimeout(() => {
+                btn.style.background = preBG
+                btn.innerText = preText
+            }, 1_200);
+        }
+    </script>
+</body>
+
+</html>
