@@ -95,7 +95,19 @@
             '?': 'question',
             '!': 'exclamation',
             '#': 'hash',
-            '@': 'at'
+            '@': 'at',
+        }
+
+        const numbers = {
+            '1': 'one',
+            '2': 'two',
+            '3': 'three',
+            '4': 'four',
+            '5': 'five',
+            '6': 'six',
+            '7': 'seven',
+            '8': 'eight',
+            '9': 'nine',
         }
 
         const whiteRadio = document.getElementById('white')
@@ -104,22 +116,32 @@
         const isWhite = () => whiteRadio.checked
         const getColor = () => isWhite() ? 'white' : 'yellow'
 
+        const replaces = [
+            ['áãâàä', 'a'],
+            ['éèêë', 'e'],
+            ['íìîï', 'i'],
+            ['óõòôö', 'o'],
+            ['úùûü', 'u'],
+        ]
+
         const lower = c => c.toLowerCase()
         const validate = c => /[a-zA-Z]|\?|@|#|!/g.test(c)
+        const removeAccents = c => replaces.reduce((ac, [from, to]) => from.includes(c) ? to : ac, c)
         const map = c => `:alphabet-${getColor()}-${c}:`
         const output = document.getElementById('output')
         const inp = document.getElementById('inp')
-
 
         const generateOutput = () => {
             const str = inp.value
             let out = ''
 
             for (let i = 0; i < str.length; i++) {
-                const char = str[i]
+                const char = removeAccents(str[i])
 
                 if (validate(char)) {
                     out += map(others[char] || lower(char))
+                } else if (numbers[char]) {
+                    out += `:${numbers[char]}:`
                 } else {
                     out += char
 
