@@ -91,7 +91,7 @@
     </div>
 
     <script>
-        const others = {
+        const specials = {
             '?': 'question',
             '!': 'exclamation',
             '#': 'hash',
@@ -99,16 +99,24 @@
         }
 
         const numbers = {
-            '0': 'zero',
-            '1': 'one',
-            '2': 'two',
-            '3': 'three',
-            '4': 'four',
-            '5': 'five',
-            '6': 'six',
-            '7': 'seven',
-            '8': 'eight',
-            '9': 'nine',
+            '0': ':zero:',
+            '1': ':one:',
+            '2': ':two:',
+            '3': ':three:',
+            '4': ':four:',
+            '5': ':five:',
+            '6': ':six:',
+            '7': ':seven:',
+            '8': ':eight:',
+            '9': ':nine:',
+            '10': ':10:',
+            '100': ':100:',
+            '1000': ':1000:',
+            '1000000': ':1000000:',
+        }
+
+        const others = {
+            ' ': '   '
         }
 
         const whiteRadio = document.getElementById('white')
@@ -117,40 +125,63 @@
         const isWhite = () => whiteRadio.checked
         const getColor = () => isWhite() ? 'white' : 'yellow'
 
-        const replaces = [
+        const accentReplaces = [
             ['áãâàä', 'a'],
             ['éèêë', 'e'],
             ['íìîï', 'i'],
             ['óõòôö', 'o'],
             ['úùûü', 'u'],
+            ['ç', 'c'],
         ]
 
         const lower = c => c.toLowerCase()
-        const validate = c => /[a-zA-Z]|\?|@|#|!/g.test(c)
-        const removeAccents = c => replaces.reduce((ac, [from, to]) => from.includes(c) ? to : ac, c)
-        const map = c => `:alphabet-${getColor()}-${c}:`
+        const isValid = c => /[a-z]|\?|@|#|!/g.test(c)
+        const removeAccents = c => accentReplaces.reduce((ac, [from, to]) => from.includes(c) ? to : ac, c)
+        const mapToEmoji = c => `:alphabet-${getColor()}-${c}:`
         const output = document.getElementById('output')
         const inp = document.getElementById('inp')
 
-        const generateOutput = () => {
-            const str = inp.value
-            let out = ''
+        const makeGreaterString = str => str.replace(/ é /g, ' eh ')
 
-            for (let i = 0; i < str.length; i++) {
-                const char = removeAccents(lower(str[i]))
-
-                if (validate(char)) {
-                    out += map(others[char] || char)
-                } else if (numbers[char]) {
-                    out += `:${numbers[char]}:`
-                } else {
-                    out += char
-
-                    if (char === ' ') {
-                        out += '   '
-                    }
+        const REPLACE_CHAR = 'þ'
+        const splitReplaces = str => {
+            const replaces = []
+            const newStr = str.split(' ').map(word => {
+                const skip = word.startsWith(':') && word.endsWith(':')
+                
+                if (skip) {
+                    replaces.push(word)
+                    return REPLACE_CHAR
                 }
-            }
+
+                return word
+            }).join(' ')
+
+            return [newStr, replaces]
+        }
+
+        const generateOutput = () => {
+            const rawStr = inp.value
+            const [cleanStr, strReplaces] = splitReplaces(rawStr)
+            const str = makeGreaterString(lower(cleanStr))
+
+            const out = str
+                .split('')
+                .map((char) => {
+                    if (char === REPLACE_CHAR && strReplaces.length > 0) {
+                        return strReplaces.shift()
+                    }
+
+                    const flatChar = removeAccents(char)
+                    const mappedChar = numbers[flatChar] || others[flatChar] || flatChar
+
+                    if (isValid(mappedChar)) {
+                        return mapToEmoji(specials[mappedChar] || mappedChar)
+                    }
+
+                    return mappedChar
+                })
+                .join('')
 
             output.innerHTML = out
         }
