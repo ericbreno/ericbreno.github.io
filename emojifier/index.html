@@ -137,10 +137,10 @@
             let out = ''
 
             for (let i = 0; i < str.length; i++) {
-                const char = removeAccents(str[i])
+                const char = removeAccents(lower(str[i]))
 
                 if (validate(char)) {
-                    out += map(others[char] || lower(char))
+                    out += map(others[char] || char)
                 } else if (numbers[char]) {
                     out += `:${numbers[char]}:`
                 } else {
