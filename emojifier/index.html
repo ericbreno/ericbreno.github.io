@@ -175,8 +175,11 @@
                     }
 
                     const flatChar = removeAccents(char)
-                    const mappedChar = numbers[flatChar] || others[flatChar] || flatChar
+                    if (numbers[flatChar]) {
+                        return numbers[flatChar]
+                    }
 
+                    const mappedChar = others[flatChar] || flatChar
                     if (isValid(mappedChar)) {
                         return mapToEmoji(specials[mappedChar] || mappedChar)
                     }
