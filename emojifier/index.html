@@ -96,6 +96,8 @@
             '!': 'exclamation',
             '#': 'hash',
             '@': 'at',
+            '¡': 'exclamation-inverted',
+            '¿': 'question-inverted'
         }
 
         const numbers = {
@@ -176,6 +178,7 @@
                     const mappedChar = numbers[flatChar] || others[flatChar] || flatChar
 
                     if (isValid(mappedChar)) {
+                        console.log({mappedChar})
                         return mapToEmoji(specials[mappedChar] || mappedChar)
                     }
 
