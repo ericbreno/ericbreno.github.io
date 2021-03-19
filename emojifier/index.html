@@ -137,7 +137,7 @@
         ]
 
         const lower = c => c.toLowerCase()
-        const isValid = c => /[a-z]|\?|@|#|!/g.test(c)
+        const isValid = c => /[a-z]|\?|@|#|!|¡|¿/g.test(c)
         const removeAccents = c => accentReplaces.reduce((ac, [from, to]) => from.includes(c) ? to : ac, c)
         const mapToEmoji = c => `:alphabet-${getColor()}-${c}:`
         const output = document.getElementById('output')
@@ -178,7 +178,6 @@
                     const mappedChar = numbers[flatChar] || others[flatChar] || flatChar
 
                     if (isValid(mappedChar)) {
-                        console.log({mappedChar})
                         return mapToEmoji(specials[mappedChar] || mappedChar)
                     }
 
