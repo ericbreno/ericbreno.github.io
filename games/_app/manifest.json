@@ -1,51 +1,69 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-884f7d83.js",
+    "file": "start-bf8013d7.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_vendor-4b56e108.js"
+      "_vendor-f04a94a3.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
       ".svelte-kit/runtime/components/error.svelte",
-      "src/routes/index.svelte"
+      "src/routes/index.svelte",
+      "src/routes/snake/index.svelte"
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-8c14607d.js",
+    "file": "pages/__layout.svelte-8e522d3c.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-4b56e108.js"
+      "_vendor-f04a94a3.js"
     ],
     "css": [
       "assets/pages/__layout.svelte-ad33121c.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
-    "file": "error.svelte-cbf8181a.js",
+    "file": "error.svelte-384d0efa.js",
     "src": ".svelte-kit/runtime/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-4b56e108.js"
+      "_vendor-f04a94a3.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-62123a07.js",
+    "file": "pages/index.svelte-4d6e9e0f.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-4b56e108.js"
-    ],
-    "css": [
-      "assets/pages/index.svelte-6d8f567f.css"
+      "_vendor-f04a94a3.js",
+      "_Snake-afb190e2.js"
     ]
   },
-  "_vendor-4b56e108.js": {
-    "file": "chunks/vendor-4b56e108.js"
+  "src/routes/snake/index.svelte": {
+    "file": "pages/snake/index.svelte-563ebcc1.js",
+    "src": "src/routes/snake/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-f04a94a3.js",
+      "_Snake-afb190e2.js"
+    ]
+  },
+  "_vendor-f04a94a3.js": {
+    "file": "chunks/vendor-f04a94a3.js"
+  },
+  "_Snake-afb190e2.js": {
+    "file": "chunks/Snake-afb190e2.js",
+    "imports": [
+      "_vendor-f04a94a3.js"
+    ],
+    "css": [
+      "assets/Snake-707baedf.css"
+    ]
   }
 }
