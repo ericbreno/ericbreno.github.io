@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-ad33121c.css">
+	<link rel="stylesheet" href="/_app/assets/pages/index.svelte-6d8f567f.css">
+	<link rel="modulepreload" href="/_app/start-11414121.js">
+	<link rel="modulepreload" href="/_app/chunks/vendor-4b56e108.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-8c14607d.js">
+	<link rel="modulepreload" href="/_app/pages/index.svelte-62123a07.js">
+	</head>
+	<body>
+		
+
+
+
+
+<title>Snake Game</title>
+
+<main class="svelte-1c0gr5f"><h1>Snake Game!</h1>
+  <p class="score svelte-1c0gr5f">0 points</p>
+
+  <div class="canvas-wrapper svelte-1c0gr5f"><canvas width="200" height="200" class="svelte-1c0gr5f"></canvas>
+    <div class="canvas-cover svelte-1c0gr5f"></div></div>
+
+  <div class="info"><p>Press arrow keys to start</p></div>
+</main>
+
+
+		<script type="module" data-hydrate="qpw0xc">
+		import { start } from "/_app/start-11414121.js";
+		start({
+			target: document.querySelector('[data-hydrate="qpw0xc"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/__layout.svelte-8c14607d.js"),
+						import("/_app/pages/index.svelte-62123a07.js")
+				],
+				params: {}
+			}
+		});
+	</script>
+	</body>
+</html>
