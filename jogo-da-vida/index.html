@@ -1,0 +1,210 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Jogo do milhão</title>
+
+    <style>
+        .elemento {
+            width: 11px; 
+            height: 11px;
+            display: inline-block;
+            margin: -3px;
+            border: 1px solid #e8e8e8;
+        }
+
+        .elemento-ativo {
+            background-color:lightgray; 
+        }
+
+        .elemento-inativo {
+            background-color:black; 
+        }
+
+        .tab-block {
+            margin-left: 2%;
+            margin-top: 3%;
+        }
+
+        .linha-matriz {
+            height: 11px;
+        }
+
+        body {
+            min-width: 400px;
+        }
+
+    </style>
+</head>
+
+<body ng-app="jogo" ng-controller="jogoController as ctrl">
+    <div class="tab-block">
+        <h3>
+            Selecione algumas casas e inicie! :D
+        </h3>
+
+        <div ng-repeat="linha in ctrl.getMatriz() track by $index" class="linha-matriz">
+            <span class="linha-matriz" ng-repeat="elemento in linha track by $index"
+                ng-click="ctrl.addCasa(elemento)">
+                <span ng-if="$debug">{{ elemento.vizinhos }}</span>
+                <span ng-if="!$debug && elemento.valor" class="elemento elemento-inativo"></span>
+                <span ng-if="!$debug && !elemento.valor" class="elemento elemento-ativo"></span>
+            </span>
+        </div>
+        
+        <div>
+            <h2>Gerações sobrevividas: {{ ctrl.geracoes }}</h2>
+            <h2>Casas adicionadas: {{ ctrl.casas }}</h2>
+        </div>
+        
+        <div>
+            <button ng-disabled="ctrl.running" ng-click="ctrl.run()">Start</button>
+            <!-- <button ng-click="$debug = !$debug">Debug</button> -->
+            <!-- <button ng-click="ctrl.stop = true">Stop</button> -->
+            <!-- <button ng-click="ctrl.reset(); ctrl.setx($x); ctrl.sety($y)">Reset</button> -->
+            <button ng-click="ctrl.reset()">Reset</button>
+        </div>
+        <!-- <input type="number" id="" placeholder="y" ng-model="$y">
+        <input type="number" id="" placeholder="x" ng-model="$x"> -->
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
+    <script>
+        const app = angular.module("jogo", []);
+
+        app.controller('jogoController', ['$scope', function ($scope) {
+            const self = this;
+
+            const TICK = 250;
+
+            let tamx = 45;
+            let tamy = 100;
+            const matriz = [];
+
+            this.setx = x => tamx = x;
+            this.sety = y => tamy = y;
+
+            this.geracoes = 0;
+            this.casas = 0;
+            this.stop = false;
+            this.running = false;
+
+            this.addCasa = elemento => {
+                if (this.running)
+                    this.casas++;
+                elemento.valor = (elemento.valor + 1) % 2;
+            };
+
+            this.getMatriz = () => matriz;
+
+            const countVizinhos = (x, y) => {
+                const vizinhos = getVizinhos(x, y);
+                const qtdVizinhos = _.sumBy(vizinhos, pos => matriz[pos.x][pos.y].valor);
+                return qtdVizinhos;
+            };
+
+            const getVizinhos = (x, y) => {
+                // descomentar para tabuleiro infinito
+                const mod = n => n; //n < 0 ? tam + n : n % tam;
+                const inRangex = n => n < tamx && n >= 0;
+                const inRangey = n => n < tamy && n >= 0;
+                return [
+                        {x, y: mod(y+1)}, 
+                        {x, y: mod(y-1)},
+                        {x: mod(x+1), y},
+                        {x: mod(x-1), y},
+                        {x: mod(x+1), y: mod(y+1)},
+                        {x: mod(x-1), y: mod(y+1)},
+                        {x: mod(x+1), y: mod(y-1)},
+                        {x: mod(x-1), y: mod(y-1)}
+                ].filter(e => inRangex(e.x) && inRangey(e.y));
+            };
+
+            this.reset = () => {
+                this.running = false;
+                this.stop = true;
+                applyToMatrix(e => e.valor = 0);
+                this.stop = false;
+
+                // makeMatrix();
+            };
+            
+            this.run = () => {
+                this.running = true;
+                this.geracoes = 0;
+                this.casas = 0;
+                runLoop();
+            };
+            
+            const runLoop = () => {
+                this.geracoes++;
+                updateVizinhos();
+    
+                let houveMudanca = false;
+                applyToMatrix(e => {
+                    const old = e.valor;
+                    if (e.vizinhos < 2 || e.vizinhos > 3) e.valor = 0;
+                    else if (e.vizinhos === 3) e.valor = 1;
+                    houveMudanca = houveMudanca || e.valor !== old;
+                });
+                this.stop |= !houveMudanca;
+                
+                setTimeout(() => {
+                    if (this.stop) {
+                        this.stop = false;
+                        this.running = false;
+                        $scope.$digest();
+                    } else {
+                        runLoop();
+                        $scope.$digest();
+                    }
+                }, TICK);
+            };
+
+            const updateVizinhos = () => {
+                _.each(matriz, (linha, x) => {
+                    _.each(linha, (elemento, y) => {
+                        elemento.vizinhos = countVizinhos(x, y);
+                    });
+                });
+            };
+
+            /**
+             * Faz o que o nome diz.
+             * 
+             * @param {*} fn 
+             */
+            const applyToMatrix = fn => {
+                _.each(matriz, (linha, x) => {
+                    _.each(linha, (elemento, y) => {
+                        fn(elemento, x, y);
+                    });
+                });
+            };
+
+            const makeGlider = () => {
+                matriz[2][1].valor = 1;
+                matriz[2][2].valor = 1;
+                matriz[2][3].valor = 1;
+                matriz[3][1].valor = 1;
+                matriz[4][2].valor = 1;
+            };
+
+            const makeMatrix = () => {
+                matriz.splice(0, matriz.length);
+                for (let i = tamx; i > 0; i--) {
+                    const linha = [];
+                    for (let j = 0; j < tamy; j++) {
+                        linha.push({ valor: 0, vizinhos: 0 });
+                    }
+                    matriz.push(linha);
+                }
+            }
+
+            (() => {
+                makeMatrix();
+                makeGlider();
+            })();
+        }]);
+    </script>
+</body>
