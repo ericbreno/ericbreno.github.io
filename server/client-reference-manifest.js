@@ -742,9 +742,9 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./public/icons/arrow-left.svg": {
+    "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js": {
       "*": {
-        "id": "(sc_client)/./public/icons/arrow-left.svg",
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "*",
         "chunks": [
           "app/page:static/chunks/app/page.js"
@@ -752,422 +752,24 @@ self.__RSC_MANIFEST={
         "async": false
       },
       "": {
-        "id": "(sc_client)/./public/icons/arrow-left.svg",
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "",
         "chunks": [
           "app/page:static/chunks/app/page.js"
         ],
         "async": false
       },
-      "default": {
-        "id": "(sc_client)/./public/icons/arrow-left.svg",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./public/icons/arrow-right.svg": {
-      "*": {
-        "id": "(sc_client)/./public/icons/arrow-right.svg",
-        "name": "*",
+      "suspense": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+        "name": "suspense",
         "chunks": [
           "app/page:static/chunks/app/page.js"
         ],
         "async": false
       },
-      "": {
-        "id": "(sc_client)/./public/icons/arrow-right.svg",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/icons/arrow-right.svg",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./public/icons/chat.svg": {
-      "*": {
-        "id": "(sc_client)/./public/icons/chat.svg",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./public/icons/chat.svg",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/icons/chat.svg",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./public/icons/correct.svg": {
-      "*": {
-        "id": "(sc_client)/./public/icons/correct.svg",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./public/icons/correct.svg",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/icons/correct.svg",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./public/icons/gear.svg": {
-      "*": {
-        "id": "(sc_client)/./public/icons/gear.svg",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./public/icons/gear.svg",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/icons/gear.svg",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./public/icons/info.svg": {
-      "*": {
-        "id": "(sc_client)/./public/icons/info.svg",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./public/icons/info.svg",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/icons/info.svg",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./public/icons/misplaced.svg": {
-      "*": {
-        "id": "(sc_client)/./public/icons/misplaced.svg",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./public/icons/misplaced.svg",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/icons/misplaced.svg",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./public/icons/times.svg": {
-      "*": {
-        "id": "(sc_client)/./public/icons/times.svg",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./public/icons/times.svg",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/icons/times.svg",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./public/icons/twitter.svg": {
-      "*": {
-        "id": "(sc_client)/./public/icons/twitter.svg",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./public/icons/twitter.svg",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/icons/twitter.svg",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./public/icons/wrong.svg": {
-      "*": {
-        "id": "(sc_client)/./public/icons/wrong.svg",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./public/icons/wrong.svg",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/icons/wrong.svg",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./node_modules/next/dist/client/image.js": {
-      "*": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./node_modules/next/dist/shared/lib/head.js": {
-      "*": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "defaultHead": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "defaultHead",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "charSet": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "charSet",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "name": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "name",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "content": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "content",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "\"title\"": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "\"title\"",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "\"base\"": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "\"base\"",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "\"meta\"": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "\"meta\"",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "TODO(prateekbh@)": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "TODO(prateekbh@)",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "\"https": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "\"https",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "here": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "here",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "https": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "https",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "reduceComponentsToState": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "reduceComponentsToState",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "headManager": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "headManager",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "inAmpMode": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "inAmpMode",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "value": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "value",
+      "NoSSR": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+        "name": "NoSSR",
         "chunks": [
           "app/page:static/chunks/app/page.js"
         ],
@@ -1193,84 +795,6 @@ self.__RSC_MANIFEST={
       },
       "default": {
         "id": "(sc_client)/./src/app/page.js",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/components/ComoJogar.js": {
-      "*": {
-        "id": "(sc_client)/./src/components/ComoJogar.js",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/ComoJogar.js",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/components/ComoJogar.js",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/components/MainPage.js": {
-      "*": {
-        "id": "(sc_client)/./src/components/MainPage.js",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/MainPage.js",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/components/MainPage.js",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/components/Resultados.js": {
-      "*": {
-        "id": "(sc_client)/./src/components/Resultados.js",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/Resultados.js",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/components/Resultados.js",
         "name": "default",
         "chunks": [
           "app/page:static/chunks/app/page.js"
@@ -2982,577 +2506,65 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/home/eric/workspace/others/palavriado/public/icons/arrow-left.svg": {
-      "id": "(app-client)/./public/icons/arrow-left.svg",
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/home/eric/workspace/others/palavriado/public/icons/arrow-left.svg#": {
-      "id": "(app-client)/./public/icons/arrow-left.svg",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/arrow-left.svg#default": {
-      "id": "(app-client)/./public/icons/arrow-left.svg",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/arrow-right.svg": {
-      "id": "(app-client)/./public/icons/arrow-right.svg",
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/home/eric/workspace/others/palavriado/public/icons/arrow-right.svg#": {
-      "id": "(app-client)/./public/icons/arrow-right.svg",
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js#": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/home/eric/workspace/others/palavriado/public/icons/arrow-right.svg#default": {
-      "id": "(app-client)/./public/icons/arrow-right.svg",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/chat.svg": {
-      "id": "(app-client)/./public/icons/chat.svg",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/chat.svg#": {
-      "id": "(app-client)/./public/icons/chat.svg",
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js#": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/home/eric/workspace/others/palavriado/public/icons/chat.svg#default": {
-      "id": "(app-client)/./public/icons/chat.svg",
-      "name": "default",
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js#suspense": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "suspense",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/home/eric/workspace/others/palavriado/public/icons/correct.svg": {
-      "id": "(app-client)/./public/icons/correct.svg",
-      "name": "*",
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js#suspense": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "suspense",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/home/eric/workspace/others/palavriado/public/icons/correct.svg#": {
-      "id": "(app-client)/./public/icons/correct.svg",
-      "name": "",
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js#NoSSR": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "NoSSR",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/home/eric/workspace/others/palavriado/public/icons/correct.svg#default": {
-      "id": "(app-client)/./public/icons/correct.svg",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/gear.svg": {
-      "id": "(app-client)/./public/icons/gear.svg",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/gear.svg#": {
-      "id": "(app-client)/./public/icons/gear.svg",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/gear.svg#default": {
-      "id": "(app-client)/./public/icons/gear.svg",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/info.svg": {
-      "id": "(app-client)/./public/icons/info.svg",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/info.svg#": {
-      "id": "(app-client)/./public/icons/info.svg",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/info.svg#default": {
-      "id": "(app-client)/./public/icons/info.svg",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/misplaced.svg": {
-      "id": "(app-client)/./public/icons/misplaced.svg",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/misplaced.svg#": {
-      "id": "(app-client)/./public/icons/misplaced.svg",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/misplaced.svg#default": {
-      "id": "(app-client)/./public/icons/misplaced.svg",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/times.svg": {
-      "id": "(app-client)/./public/icons/times.svg",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/times.svg#": {
-      "id": "(app-client)/./public/icons/times.svg",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/times.svg#default": {
-      "id": "(app-client)/./public/icons/times.svg",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/twitter.svg": {
-      "id": "(app-client)/./public/icons/twitter.svg",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/twitter.svg#": {
-      "id": "(app-client)/./public/icons/twitter.svg",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/twitter.svg#default": {
-      "id": "(app-client)/./public/icons/twitter.svg",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/wrong.svg": {
-      "id": "(app-client)/./public/icons/wrong.svg",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/wrong.svg#": {
-      "id": "(app-client)/./public/icons/wrong.svg",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/public/icons/wrong.svg#default": {
-      "id": "(app-client)/./public/icons/wrong.svg",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/client/image.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/client/image.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/client/image.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/client/image.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/client/image.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/client/image.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#defaultHead": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "defaultHead",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#defaultHead": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "defaultHead",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#charSet": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "charSet",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#charSet": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "charSet",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#name": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "name",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#name": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "name",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#content": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "content",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#content": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "content",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#\"title\"": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "\"title\"",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#\"title\"": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "\"title\"",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#\"base\"": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "\"base\"",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#\"base\"": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "\"base\"",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#\"meta\"": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "\"meta\"",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#\"meta\"": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "\"meta\"",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#TODO(prateekbh@)": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "TODO(prateekbh@)",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#TODO(prateekbh@)": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "TODO(prateekbh@)",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#\"https": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "\"https",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#\"https": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "\"https",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#here": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "here",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#here": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "here",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#https": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "https",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#https": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "https",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#reduceComponentsToState": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "reduceComponentsToState",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#reduceComponentsToState": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "reduceComponentsToState",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#headManager": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "headManager",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#headManager": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "headManager",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#inAmpMode": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "inAmpMode",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#inAmpMode": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "inAmpMode",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#value": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "value",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#value": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "value",
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/lazy-dynamic/dynamic-no-ssr.js#NoSSR": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "NoSSR",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
@@ -3582,78 +2594,6 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/home/eric/workspace/others/palavriado/src/components/ComoJogar.js": {
-      "id": "(app-client)/./src/components/ComoJogar.js",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/src/components/ComoJogar.js#": {
-      "id": "(app-client)/./src/components/ComoJogar.js",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/src/components/ComoJogar.js#default": {
-      "id": "(app-client)/./src/components/ComoJogar.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/src/components/MainPage.js": {
-      "id": "(app-client)/./src/components/MainPage.js",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/src/components/MainPage.js#": {
-      "id": "(app-client)/./src/components/MainPage.js",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/src/components/MainPage.js#default": {
-      "id": "(app-client)/./src/components/MainPage.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/src/components/Resultados.js": {
-      "id": "(app-client)/./src/components/Resultados.js",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/src/components/Resultados.js#": {
-      "id": "(app-client)/./src/components/Resultados.js",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/eric/workspace/others/palavriado/src/components/Resultados.js#default": {
-      "id": "(app-client)/./src/components/Resultados.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
     "/home/eric/workspace/others/palavriado/src/app/globals.css#": {
       "id": "null",
       "name": "default",
@@ -3667,6 +2607,654 @@ self.__RSC_MANIFEST={
       "chunks": [
         "static/css/app/layout.css"
       ]
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/arrow-left.svg": {
+      "id": "(app-client)/./public/icons/arrow-left.svg",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/arrow-left.svg#": {
+      "id": "(app-client)/./public/icons/arrow-left.svg",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/arrow-left.svg#default": {
+      "id": "(app-client)/./public/icons/arrow-left.svg",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/arrow-right.svg": {
+      "id": "(app-client)/./public/icons/arrow-right.svg",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/arrow-right.svg#": {
+      "id": "(app-client)/./public/icons/arrow-right.svg",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/arrow-right.svg#default": {
+      "id": "(app-client)/./public/icons/arrow-right.svg",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/chat.svg": {
+      "id": "(app-client)/./public/icons/chat.svg",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/chat.svg#": {
+      "id": "(app-client)/./public/icons/chat.svg",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/chat.svg#default": {
+      "id": "(app-client)/./public/icons/chat.svg",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/correct.svg": {
+      "id": "(app-client)/./public/icons/correct.svg",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/correct.svg#": {
+      "id": "(app-client)/./public/icons/correct.svg",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/correct.svg#default": {
+      "id": "(app-client)/./public/icons/correct.svg",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/gear.svg": {
+      "id": "(app-client)/./public/icons/gear.svg",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/gear.svg#": {
+      "id": "(app-client)/./public/icons/gear.svg",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/gear.svg#default": {
+      "id": "(app-client)/./public/icons/gear.svg",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/info.svg": {
+      "id": "(app-client)/./public/icons/info.svg",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/info.svg#": {
+      "id": "(app-client)/./public/icons/info.svg",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/info.svg#default": {
+      "id": "(app-client)/./public/icons/info.svg",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/misplaced.svg": {
+      "id": "(app-client)/./public/icons/misplaced.svg",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/misplaced.svg#": {
+      "id": "(app-client)/./public/icons/misplaced.svg",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/misplaced.svg#default": {
+      "id": "(app-client)/./public/icons/misplaced.svg",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/times.svg": {
+      "id": "(app-client)/./public/icons/times.svg",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/times.svg#": {
+      "id": "(app-client)/./public/icons/times.svg",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/times.svg#default": {
+      "id": "(app-client)/./public/icons/times.svg",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/twitter.svg": {
+      "id": "(app-client)/./public/icons/twitter.svg",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/twitter.svg#": {
+      "id": "(app-client)/./public/icons/twitter.svg",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/twitter.svg#default": {
+      "id": "(app-client)/./public/icons/twitter.svg",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/wrong.svg": {
+      "id": "(app-client)/./public/icons/wrong.svg",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/wrong.svg#": {
+      "id": "(app-client)/./public/icons/wrong.svg",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/public/icons/wrong.svg#default": {
+      "id": "(app-client)/./public/icons/wrong.svg",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/client/image.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/client/image.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/client/image.js#": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/client/image.js#": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/client/image.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/client/image.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#defaultHead": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "defaultHead",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#defaultHead": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "defaultHead",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#charSet": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "charSet",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#charSet": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "charSet",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#name": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "name",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#name": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "name",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#content": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "content",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#content": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "content",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#\"title\"": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "\"title\"",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#\"title\"": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "\"title\"",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#\"base\"": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "\"base\"",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#\"base\"": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "\"base\"",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#\"meta\"": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "\"meta\"",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#\"meta\"": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "\"meta\"",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#TODO(prateekbh@)": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "TODO(prateekbh@)",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#TODO(prateekbh@)": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "TODO(prateekbh@)",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#\"https": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "\"https",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#\"https": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "\"https",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#here": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "here",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#here": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "here",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#https": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "https",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#https": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "https",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#reduceComponentsToState": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "reduceComponentsToState",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#reduceComponentsToState": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "reduceComponentsToState",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#headManager": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "headManager",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#headManager": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "headManager",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#inAmpMode": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "inAmpMode",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#inAmpMode": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "inAmpMode",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/shared/lib/head.js#value": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "value",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/node_modules/next/dist/esm/shared/lib/head.js#value": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "value",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/src/components/ComoJogar.js": {
+      "id": "(app-client)/./src/components/ComoJogar.js",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/src/components/ComoJogar.js#": {
+      "id": "(app-client)/./src/components/ComoJogar.js",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/src/components/ComoJogar.js#default": {
+      "id": "(app-client)/./src/components/ComoJogar.js",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/src/components/MainPage.js": {
+      "id": "(app-client)/./src/components/MainPage.js",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/src/components/MainPage.js#": {
+      "id": "(app-client)/./src/components/MainPage.js",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/src/components/MainPage.js#default": {
+      "id": "(app-client)/./src/components/MainPage.js",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/src/components/Resultados.js": {
+      "id": "(app-client)/./src/components/Resultados.js",
+      "name": "*",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/src/components/Resultados.js#": {
+      "id": "(app-client)/./src/components/Resultados.js",
+      "name": "",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
+    },
+    "/home/eric/workspace/others/palavriado/src/components/Resultados.js#default": {
+      "id": "(app-client)/./src/components/Resultados.js",
+      "name": "default",
+      "chunks": [
+        "_app-client_src_components_Home_js:static/chunks/_app-client_src_components_Home_js.js"
+      ],
+      "async": false
     }
   }
 }
